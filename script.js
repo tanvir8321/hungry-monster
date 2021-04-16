@@ -1,3 +1,4 @@
+
 // search funtion call api and display desire searched data.
 const search = value => {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${value}`)
@@ -9,45 +10,50 @@ const search = value => {
                 data.meals.forEach(food => {
                     const mealDiv = document.createElement('div');
                     const mealContent = `
-                        <a href="">
                             <div class="meal">
                                 <img src="${food.strMealThumb}" alt="">
                                 <p>${food.strMeal}</p>
                             </div>
-                        </a>
                     `
                     mealDiv.innerHTML = mealContent;
                     mealContainer.appendChild(mealDiv);
-                    
                 });
+
             } else {
                 const mealContainer = document.getElementById('meal-container');
                 const mealContent = `
-                    <a href="">
                         <div class="meal">
                             <p>Not found....</p>
                         </div>
-                    </a>`
+                    `
                 mealContainer.innerHTML = mealContent;
             }
         });
-    }
+}
 
-    // get value from user by input
-    const getInputValue = () => {
-        return document.getElementById('search-input').value;
-    }
+// get value from user by input
+const getInputValue = () => {
+    return document.getElementById('search-input').value;
+}
 
-    // on input handler :: when user some input value in search are, then onInputHandler will work that time
-    const onInputHandler = () => {
-        const onInputSearch = getInputValue();
-        search(onInputSearch);
-    }
-    // onClickHandler :: when user click on search button, then onClickHandler with work
-    const onClickHandler = () => {
-        const onInputSearch = getInputValue();
-        search(onInputSearch);
-    }
+// on input handler :: when user some input value in search are, then onInputHandler will work that time
+const onInputHandler = () => {
+    const onInputSearch = getInputValue();
+    search(onInputSearch);
+}
+// onClickHandler :: when user click on search button, then onClickHandler with work
+const onClickHandler = () => {
+    const onInputSearch = getInputValue();
+    search(onInputSearch);
+}
+
+const inputValue = getInputValue();
+if (!inputValue) {
+    search(inputValue);
+}
+
+
+
 
 // const search = () => {
 
