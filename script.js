@@ -1,4 +1,3 @@
-
 // search funtion call api and display desire searched data.
 const search = value => {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${value}`)
@@ -30,7 +29,7 @@ const search = value => {
                 const mealContainer = document.getElementById('meal-container');
                 const mealContent = `
                         <div class="meal">
-                            <p>Not found....</p>
+                            <img src="images/404.png" alt="">
                         </div>
                     `
                 mealContainer.innerHTML = mealContent;
@@ -45,10 +44,10 @@ const getInputValue = () => {
 
 // on input handler :: when user some input value in search are, then onInputHandler will work that time
 const onInputHandler = () => {
-    const onInputSearch = getInputValue();
-    search(onInputSearch);
-}
-// onClickHandler :: when user click on search button, then onClickHandler with work
+        const onInputSearch = getInputValue();
+        search(onInputSearch);
+    }
+    // onClickHandler :: when user click on search button, then onClickHandler with work
 const onClickHandler = () => {
     const onInputSearch = getInputValue();
     search(onInputSearch);
