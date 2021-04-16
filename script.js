@@ -8,16 +8,19 @@ const search = value => {
                 const mealContainer = document.getElementById('meal-container');
                 mealContainer.innerHTML = '';
                 data.meals.forEach(food => {
+                    
                     const mealDiv = document.createElement('div');
                     const mealContent = `
-                            <div class="meal">
+                            <div onclick="showMeal(${food.idMeal})" class="meal">
                                 <img src="${food.strMealThumb}" alt="">
                                 <p>${food.strMeal}</p>
                             </div>
                     `
                     mealDiv.innerHTML = mealContent;
                     mealContainer.appendChild(mealDiv);
+                    
                 });
+                
 
             } else {
                 const mealContainer = document.getElementById('meal-container');
@@ -52,7 +55,36 @@ if (!inputValue) {
     search(inputValue);
 }
 
+const showMeal = id => {
+    const mealDelail = document.getElementById("meal-details");
+    mealDelail.style.display = "block";
+    mealDelail.innerHTML = '';
+    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
+    .then(res => res.json())
+    .then(data => {
+        console.log(data.meals[0]);
+        const mealDetailContent = `
+        <img src="${data.meals[0].strMealThumb}" alt="" srcset="">
+        <h3>${data.meals[0].strMeal}</h3>
+        <h4>Ingredients</h4>
+        <ul>
+            <li><i class="fas fa-check-square"></i> ${data.meals[0].strIngredient1}</li>
+            <li><i class="fas fa-check-square"></i> ${data.meals[0].strIngredient2}</li>
+            <li><i class="fas fa-check-square"></i> ${data.meals[0].strIngredient3}</li>
+            <li><i class="fas fa-check-square"></i> ${data.meals[0].strIngredient4}</li>
+            <li><i class="fas fa-check-square"></i> ${data.meals[0].strIngredient5}</li>
+            <li><i class="fas fa-check-square"></i> ${data.meals[0].strIngredient6}</li>
+        </ul>
+        
+        `;
+        mealDelail.innerHTML = mealDetailContent;
+    })
 
+}
+
+// const mealContainerMeal = document.getElementById('meal-container');
+// console.log(mealContainerMeal)
+// mealContainerMeal.
 
 
 // const search = () => {

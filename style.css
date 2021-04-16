@@ -71,11 +71,31 @@ main{
     margin: 0 auto;
     display: none;
 }
-.meal-details-area img{}
-.meal-details-area h3{}
-.meal-details-area h4{}
+.meal-details-area img{
+    border-radius: 20px;
+}
+.meal-details-area h3{
+    padding: 20px 0;
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+.meal-details-area h4{
+    font-size: 25px;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+}
 .meal-details-area ul{}
-.meal-details-area ul li{}
+
+.meal-details-area ul li{
+    font-size: 16px;
+    /* margin-right: 10px !important; */
+    /* display: block !important; */
+}
+.meal-details-area ul li i{
+    color: #f06c4e;
+    margin-right: 10px;
+}
 .meal-display-area{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
