@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +8,51 @@
     <title>Hungry Monster</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <nav>
-            ul>li>a*
+            <a href=""><img src="images/logo.png"></a>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Recipes</a></li>
+                <li><a href="">Blog</a></li>
+            </ul>
         </nav>
     </header>
-    
+    <main>
+        <div class="search-area div-gap">
+            <input oninput="onInputHandler()" id="search-input" type="text" placeholder="Search for Meal...">
+            <button onclick="onClickHandler()" >Search</button>
+        </div>
+        <div class="meal-details-area div-gap">
+            <img src="images/figure.jpg" alt="" srcset="">
+            <h3>Meal Name</h3>
+            <h4>Ingredients</h4>
+            <ul>
+                <li>Ingredients --- 1</li>
+                <li>Ingredients --- 2</li>
+                <li>Ingredients --- 3</li>
+                <li>Ingredients --- 4</li>
+                <li>Ingredients --- 5</li>
+                <li>Ingredients --- 6</li>
+            </ul>
+        </div>
+        <div id="meal-container" class="meal-display-area div-gap">
+            <!-- <a href="">
+                <div class="meal">
+                    <img src="${fItem.strMealThumb}" alt="">
+                    <p>${fItem.strMeal}</p>
+                </div>
+            </a> -->
+        </div>
+    </main>
+    <footer class="div-gap">
+        <p>&copy; copyright 2020 &mdash; Hungry Monster</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>

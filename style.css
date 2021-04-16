@@ -1,0 +1,99 @@
+*{
+    margin: 0; 
+    padding: 0;
+}
+body{
+    width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 100px auto 100px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.div-gap{
+    padding: 50px 0;
+}
+img{
+    width: 100%;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+li{
+    list-style-type: none;
+}
+nav{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    align-items: center;
+    padding: 10px 0;
+}
+nav img{
+    width: 100px;
+}
+nav ul{
+    display: flex;
+    justify-content: flex-end;
+}
+nav ul li{}
+nav ul li a{
+    margin-left: 30px;
+    font-size: 20px;
+}
+nav ul li a:hover{
+    color: #F06C4E;
+}
+main{
+    display: grid;
+    grid-template-rows: auto auto auto;
+}
+.search-area{}
+.search-area input{
+    background-color: #F8F7F5;
+    border-radius: 10px 0px 0px 10px;
+    width: 500px;
+}
+.search-area button{
+    background-color: #F06C4E;
+    border-radius: 0px 10px 10px 0px;
+    color: #fff;
+}
+.search-area input, .search-area button{
+    padding: 15px 20px;
+    border: 0;
+}
+.search-area{
+    display: flex;
+    justify-content: center;
+}
+.meal-details-area{
+    width: 40%;
+    margin: 0 auto;
+    display: none;
+}
+.meal-details-area img{}
+.meal-details-area h3{}
+.meal-details-area h4{}
+.meal-details-area ul{}
+.meal-details-area ul li{}
+.meal-display-area{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+.meal-display-area .meal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.meal-display-area .meal img{
+    border-radius: 15px;
+}
+.meal-display-area .meal p{
+    margin: 20px 0;
+    font-size: 24px;
+    text-align: center;
+}
+footer{
+    text-align: center;
+}
